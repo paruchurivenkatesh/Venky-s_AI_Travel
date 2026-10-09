@@ -15,20 +15,9 @@ import { api } from './services/api';
 
 const AppContent: React.FC = () => {
   const { user } = useAuth();
-  const [currentTab, setCurrentTab] = useState<string>(() => {
-    const token = localStorage.getItem('venkys_token');
-    return token ? 'home' : 'login';
-  });
+  const [currentTab, setCurrentTab] = useState<string>('home');
   const [destinations, setDestinations] = useState<DestinationCard[]>([]);
   const [selectedTrip, setSelectedTrip] = useState<Trip | null>(null);
-
-  // Protected route guard: require login for planning, dashboard, trip, and explore
-  useEffect(() => {
-    const protectedTabs = ['plan', 'dashboard', 'trip', 'explore'];
-    if (!user && protectedTabs.includes(currentTab)) {
-      setCurrentTab('login');
-    }
-  }, [user, currentTab]);
 
   // Load curated Indian destinations on mount
   useEffect(() => {
@@ -38,11 +27,7 @@ const AppContent: React.FC = () => {
   }, []);
 
   const handleStartPlanning = (dest?: string) => {
-    if (!user) {
-      setCurrentTab('login');
-    } else {
-      setCurrentTab('plan');
-    }
+    setCurrentTab('plan');
   };
 
   const handleTripGenerated = (trip: Trip) => {
@@ -69,7 +54,7 @@ const AppContent: React.FC = () => {
           <LandingPage
             destinations={destinations}
             onStartPlanning={handleStartPlanning}
-            onExplore={() => setCurrentTab(user ? 'explore' : 'login')}
+            onExplore={() => setCurrentTab('explore')}
           />
         )}
 
@@ -106,7 +91,7 @@ const AppContent: React.FC = () => {
         {currentTab === 'login' && (
           <LoginPage
             onNavigate={(tab) => setCurrentTab(tab)}
-            onSuccess={() => setCurrentTab('dashboard')}
+            onSuccess={() => setCurrentTab(user ? 'dashboard' : 'home')}
           />
         )}
 

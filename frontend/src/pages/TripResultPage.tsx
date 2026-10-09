@@ -48,9 +48,6 @@ export const TripResultPage: React.FC<TripResultPageProps> = ({
         <img
           src={trip.hotels[0]?.image_url || 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1600&q=80'}
           alt={trip.destination}
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1600&q=80';
-          }}
           className="w-full h-80 sm:h-96 object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
@@ -306,9 +303,6 @@ export const TripResultPage: React.FC<TripResultPageProps> = ({
                     <img
                       src={h.image_url || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80'}
                       alt={h.name}
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80';
-                      }}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[10px] font-bold text-emerald-400">

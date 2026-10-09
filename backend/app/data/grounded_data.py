@@ -104,7 +104,7 @@ DESTINATIONS_DATA: Dict[str, Dict[str, Any]] = {
         "best_season": "October to March",
         "recommended_days": 3,
         "short_description": "The City of Pearls, boasting 400-year-old Nizami heritage, UNESCO-recognized Golconda Fort, and world-renowned Dum Biryani.",
-        "image_url": "/images/destinations/hyderabad.jpg",
+        "image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?auto=format&fit=crop&w=1200&q=80",
         "travel_styles": ["Heritage", "Food", "Culture", "Family", "History"],
         "typical_budget_per_day": 2500.0,
         "famous_food": [
@@ -421,7 +421,7 @@ DESTINATIONS_DATA: Dict[str, Dict[str, Any]] = {
         "best_season": "October to May",
         "recommended_days": 4,
         "short_description": "The Abode of Clouds, featuring Living Root Bridges, crystal-clear Umngot river in Dawki, and majestic Nohkalikai waterfalls.",
-        "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+        "image_url": "https://images.unsplash.com/photo-1607558364137-56e6bf128d57?auto=format&fit=crop&w=1200&q=80",
         "travel_styles": ["Nature", "Adventure", "Offbeat", "Waterfalls", "Photography"],
         "typical_budget_per_day": 2900.0,
         "famous_food": [

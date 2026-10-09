@@ -135,24 +135,15 @@ export const SignupPage: React.FC<SignupPageProps> = ({ onNavigate, onSuccess })
           </button>
         </form>
 
-        <div className="pt-2 text-center space-y-2">
-          <p className="text-xs text-slate-500 dark:text-slate-400">
-            Already registered?{' '}
-            <button
-              onClick={() => onNavigate('login')}
-              className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
-            >
-              Sign In
-            </button>
-          </p>
+        <p className="text-center text-xs text-slate-500 dark:text-slate-400">
+          Already registered?{' '}
           <button
-            type="button"
-            onClick={() => onNavigate('home')}
-            className="text-xs font-semibold text-slate-400 hover:text-emerald-500 transition-colors"
+            onClick={() => onNavigate('login')}
+            className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
           >
-            ← View Landing Page Preview
+            Sign In
           </button>
-        </div>
+        </p>
 
       </div>
     </div>

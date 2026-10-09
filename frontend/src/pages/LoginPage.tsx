@@ -141,24 +141,15 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate, onSuccess }) =
           </button>
         </form>
 
-        <div className="pt-2 text-center space-y-2">
-          <p className="text-xs text-slate-500 dark:text-slate-400">
-            Don't have an account?{' '}
-            <button
-              onClick={() => onNavigate('signup')}
-              className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
-            >
-              Create an Account
-            </button>
-          </p>
+        <p className="text-center text-xs text-slate-500 dark:text-slate-400">
+          Don't have an account?{' '}
           <button
-            type="button"
-            onClick={() => onNavigate('home')}
-            className="text-xs font-semibold text-slate-400 hover:text-emerald-500 transition-colors"
+            onClick={() => onNavigate('signup')}
+            className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
           >
-            ← View Landing Page Preview
+            Create an Account
           </button>
-        </div>
+        </p>
 
       </div>
     </div>

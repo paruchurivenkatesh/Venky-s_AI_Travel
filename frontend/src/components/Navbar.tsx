@@ -14,7 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/90 dark:bg-slate-950/90 border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/80 dark:bg-slate-950/85 bg-white/80 border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -54,7 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
               Home
             </button>
             <button
-              onClick={() => onNavigate(user ? 'explore' : 'login')}
+              onClick={() => onNavigate('explore')}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                 currentTab === 'explore'
                   ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm'
@@ -64,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
               Explore India
             </button>
             <button
-              onClick={() => onNavigate(user ? 'plan' : 'login')}
+              onClick={() => onNavigate('plan')}
               className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                 currentTab === 'plan'
                   ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-600/30'
@@ -110,8 +110,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
                   <span className="max-w-[120px] truncate">{user.full_name || user.email.split('@')[0]}</span>
                 </button>
                 <button
-                  onClick={() => { logout(); onNavigate('login'); }}
-                  title="Sign Out"
+                  onClick={logout}
+                  title="Log Out"
                   className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-rose-500 hover:border-rose-500/30 transition-colors"
                 >
                   <LogOut className="w-4 h-4" />
@@ -163,13 +163,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
             Home
           </button>
           <button
-            onClick={() => { onNavigate(user ? 'explore' : 'login'); setMobileMenuOpen(false); }}
+            onClick={() => { onNavigate('explore'); setMobileMenuOpen(false); }}
             className="block w-full text-left py-2 px-3 rounded-lg font-medium text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900"
           >
             Explore India
           </button>
           <button
-            onClick={() => { onNavigate(user ? 'plan' : 'login'); setMobileMenuOpen(false); }}
+            onClick={() => { onNavigate('plan'); setMobileMenuOpen(false); }}
             className="flex items-center gap-2 w-full text-left py-2 px-3 rounded-lg font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10"
           >
             <Sparkles className="w-4 h-4" />
@@ -188,7 +188,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onNavigate }) => {
             {user ? (
               <div className="flex items-center justify-between">
                 <span className="text-sm font-medium text-slate-600 dark:text-slate-400">{user.email}</span>
-                <button onClick={() => { logout(); onNavigate('login'); setMobileMenuOpen(false); }} className="text-sm text-rose-500 font-semibold">
+                <button onClick={() => { logout(); setMobileMenuOpen(false); }} className="text-sm text-rose-500 font-semibold">
                   Sign Out
                 </button>
               </div>

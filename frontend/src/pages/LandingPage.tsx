@@ -6,7 +6,6 @@ import {
 } from 'lucide-react';
 import { DestinationCard, RecommendationItem } from '../types';
 import { api } from '../services/api';
-import { useAuth } from '../context/AuthContext';
 
 interface LandingPageProps {
   destinations: DestinationCard[];
@@ -19,7 +18,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
   onStartPlanning,
   onExplore,
 }) => {
-  const { user } = useAuth();
   const [smartQuery, setSmartQuery] = useState('I have ₹15,000 and 4 days from Hyderabad');
   const [recommending, setRecommending] = useState(false);
   const [recommendations, setRecommendations] = useState<RecommendationItem[] | null>(null);
@@ -43,31 +41,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
     <div className="space-y-24 pb-20">
       
       {/* 1. HERO SECTION */}
-      <section className="relative pt-10 md:pt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        {!user && (
-          <div className="mb-8 p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-teal-500/10 border border-emerald-500/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-left">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
-                <Sparkles className="w-4 h-4" />
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white">
-                  Account Required for AI Travel Planning
-                </p>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400">
-                  Please log in or sign up to generate personalized itineraries, calculate verified budgets, and export PDFs.
-                </p>
-              </div>
-            </div>
-            <button
-              onClick={() => onStartPlanning()}
-              className="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs whitespace-nowrap shadow-md transition-all shrink-0"
-            >
-              Sign In to Access →
-            </button>
-          </div>
-        )}
-
+      <section className="relative pt-12 md:pt-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Hero Content */}
@@ -233,9 +207,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                     <img
                       src={r.image_url}
                       alt={r.destination}
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80';
-                      }}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                     />
                     <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-slate-900/80 backdrop-blur-md text-[10px] font-bold text-emerald-400">
@@ -292,9 +263,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                 <img
                   src={d.image_url}
                   alt={d.name}
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80';
-                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/70 backdrop-blur-md text-[10px] font-extrabold uppercase tracking-wider text-emerald-400 border border-emerald-500/30">

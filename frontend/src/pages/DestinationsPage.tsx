@@ -113,9 +113,6 @@ export const DestinationsPage: React.FC<DestinationsPageProps> = ({
                 <img
                   src={d.image_url}
                   alt={d.name}
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80';
-                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/70 backdrop-blur-md text-[10px] font-extrabold uppercase tracking-wider text-emerald-400 border border-emerald-500/30">
