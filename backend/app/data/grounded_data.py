@@ -104,7 +104,7 @@ DESTINATIONS_DATA: Dict[str, Dict[str, Any]] = {
         "best_season": "October to March",
         "recommended_days": 3,
         "short_description": "The City of Pearls, boasting 400-year-old Nizami heritage, UNESCO-recognized Golconda Fort, and world-renowned Dum Biryani.",
-        "image_url": "https://images.unsplash.com/photo-1572445271230-a78b5944a659?auto=format&fit=crop&w=1200&q=80",
+        "image_url": "/images/destinations/hyderabad.jpg",
         "travel_styles": ["Heritage", "Food", "Culture", "Family", "History"],
         "typical_budget_per_day": 2500.0,
         "famous_food": [

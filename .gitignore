@@ -9,7 +9,10 @@ __pycache__/
 *.sqlite
 *.sqlite3
 venkys_travel.db
+backend/venkys_travel.db
+.venv/
 venv/
+backend/venv/
 env/
 .pytest_cache/
 
