@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🇮🇳 Venky's AI Travel
 
 > **"Your AI-Powered India Travel Planner"**  
@@ -264,3 +265,6 @@ Rajamahendri Institute of Engineering and Technology (RIET) | JNTUK
 ---
 
 **Developed with ❤️ for Incredible India.**
+=======
+# Venky-s_AI_Travel
+>>>>>>> origin/main
