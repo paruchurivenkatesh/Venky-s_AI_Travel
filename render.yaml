@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: venkys-ai-travel
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: DEMO_MODE
+        value: "true"
+      - key: JWT_SECRET_KEY
+        generateValue: true
